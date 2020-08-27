@@ -35,7 +35,7 @@ module.exports = {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '~/plugins/firebase.js'
+    '~/plugins/firebase.js',
   ],
   /*
   ** Auto import components
@@ -48,13 +48,14 @@ module.exports = {
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/vuetify'
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
     'nuxt-material-design-icons',
-    
+
   ],
   /*
   ** Build configuration
