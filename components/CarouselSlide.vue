@@ -18,6 +18,8 @@ export default {
 <style scoped>
 .carousel-slide {
   position: absolute !important;
+  /* width: inherit;
+  height: inherit; */
   top: 0;
   left: 0;
   right: 0;
