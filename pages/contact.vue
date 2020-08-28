@@ -1,6 +1,16 @@
 <template>
   <div class="mt-20" style="padding:10px;">
     <!-- component -->
+    <div class="flex justify-center p-4">
+      <div
+        class="card flex flex-col md:w-1/2 justify-center p-2 bg-white rounded-lg shadow-lg divide-y divide-gray-400 text-center"
+      >
+        <div class="prod-title">
+          <p class="text-2xl uppercase text-gray-900 font-bold">Send us an Email</p>
+        </div>
+      </div>
+    </div>
+
     <form class="w-full max-w-lg mx-auto">
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -69,6 +79,23 @@
       </div>
     </form>
     <div class="flex h-auto pb-16"></div>
+    <div class="flex justify-center p-4">
+      <div
+        class="card flex flex-col md:w-1/2 justify-center p-2 bg-white rounded-lg shadow-lg divide-y divide-gray-400 text-center"
+      >
+        <div class="prod-title">
+          <p class="text-2xl uppercase text-gray-900 font-bold">Join our Team!</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center text-center">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdpdpIjhpTaV0m5GBcYAOgKcrpi7VWseBG8LbzggkuykZ0gIw/viewform?embedded=true"
+        width="640px"
+        height="3450px"
+        frameborder="0"
+      ></iframe>
+    </div>
   </div>
 </template>
 <script>

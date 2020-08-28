@@ -8,7 +8,7 @@
           <!-- Header -->
           <img style="padding-right:20px; display:inline-block; width:48px;" :src="logo" />
           <span class="">Climate Action Carleton</span>
-          <button class="ml-2">
+          <button class="ml-2" @click="showSubtitle = !showSubtitle">
             <svg class="h-5 w-5 fill-current" viewBox="0 0 256 512">
               <path
                 d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9
@@ -27,7 +27,7 @@
           <div class="h-8 bg-gray-500 w-16 block mx-auto rounded-sm"></div>
           <h1>Dunns Famous</h1>
         </a>-->
-        <div class="text-2xl uppercase text-gray-400 font-bold">{{saying}}</div>
+        <div class="text-2xl uppercase text-gray-400 font-bold" :v-if="showSubtitle">{{saying}}</div>
       </div>
 
       <div class="block lg:hidden pt-1" @click="hidden = !hidden">
@@ -107,6 +107,7 @@ export default {
       logo: require('../assets/imgs/logo.png'),
       hidden: true,
       saying: "The Time is Now",
+      showSubtitle: true,
       phrases: [
         "The Time is Now",
         "It's Time for Action",
