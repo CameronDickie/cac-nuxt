@@ -4,10 +4,10 @@
     <!-- <div class="bg-blue-300 py-1"></div> -->
     <nav class="flex items-center justify-between flex-wrap bg-white py-4 mx-auto px-8">
       <div class="flex items-center flex-shrink-0 mr-6">
-        <h3 class="text-3xl font-semibold capitalize dark:text-gray-300 hover:text-gray-800">
+        <h3 class="xl:text-3xl lg:text-3xl md:text-3xl sm:text-2xl font-semibold capitalize dark:text-gray-300 hover:text-gray-800">
           <!-- Header -->
           <img style="padding-right:20px; display:inline-block; width:48px;" :src="logo" />
-          <span class="xs:text-base">Climate Action Carleton</span>
+          <span class="">Climate Action Carleton</span>
           <button class="ml-2">
             <svg class="h-5 w-5 fill-current" viewBox="0 0 256 512">
               <path
