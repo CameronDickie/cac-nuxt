@@ -44,13 +44,13 @@
           <label
             class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
             for="grid-password"
-          >E-mail</label>
+          >Subject</label>
           <input
             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            id="email"
-            type="email"
+            id="subject"
+            type="subject"
           />
-          <p class="text-gray-600 text-xs italic">Some tips - as long as needed</p>
+          <!-- <p class="text-gray-600 text-xs italic">Some tips - as long as needed</p> -->
         </div>
       </div>
       <div class="flex flex-wrap -mx-3 mb-6">
@@ -65,7 +65,7 @@
           ></textarea>
           <p
             class="text-gray-600 text-xs italic"
-          >Re-size can be disabled by set by resize-none / resize-y / resize-x / resize</p>
+          >Please enter a body for your email</p>
         </div>
       </div>
       <div class="md:flex md:items-center">
@@ -73,6 +73,7 @@
           <button
             class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
             type="button"
+            @click="sendEmail"
           >Send</button>
         </div>
         <div class="md:w-2/3"></div>
@@ -99,5 +100,23 @@
   </div>
 </template>
 <script>
-export default {}
+export default {
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+    sendEmail(){
+      var first = document.getElementById('grid-first-name').value;
+      var last = document.getElementById('grid-last-name').value;
+      var subjt = ''
+      subjt = document.getElementById("subject").value;
+      var bdy = '';
+      bdy =  document.getElementById("message").value;
+      bdy = bdy.replaceAll('\n', '%0D%0A')
+      window.open('mailto:climateactioncarleton@gmail.com?subject=' + subjt + "&body=" + bdy + '%0D%0A' + first + " " + last);
+    },
+  }
+}
 </script>
