@@ -7,7 +7,7 @@
         <h3 class="text-3xl font-semibold capitalize dark:text-gray-300 hover:text-gray-800">
           <!-- Header -->
           <img style="padding-right:20px; display:inline-block; width:48px;" :src="logo" />
-          <span>Climate Action Carleton</span>
+          <span class="xs:text-base">Climate Action Carleton</span>
           <button class="ml-2">
             <svg class="h-5 w-5 fill-current" viewBox="0 0 256 512">
               <path
@@ -27,7 +27,7 @@
           <div class="h-8 bg-gray-500 w-16 block mx-auto rounded-sm"></div>
           <h1>Dunns Famous</h1>
         </a>-->
-        <div class="text-2xl uppercase text-gray-400 font-bold">The Time is Now</div>
+        <div class="text-2xl uppercase text-gray-400 font-bold">{{saying}}</div>
       </div>
 
       <div class="block lg:hidden pt-1" @click="hidden = !hidden">
@@ -57,7 +57,7 @@
               <button
                 class="bg-transparent border-transparent text-lg text-gray-700 font-semibold py-1 px-4 rounded-lg outline-none uppercase transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-101 cursor-pointer"
                 v-bind:class="{ 'border-gray-900 text-gray-900 double-line text-xl': $route.path == '/' }"
-                @click="delayChange"
+                @click="delayChange; saying=phrases[0]"
               >Home</button>
             </nuxt-link>
           </li>
@@ -66,7 +66,7 @@
               <button
                 class="bg-transparent border-transparent text-lg text-gray-700 font-semibold py-1 px-4 rounded-lg outline-none uppercase transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-101 cursor-pointer"
                 v-bind:class="{ 'border-gray-900 text-gray-900 double-line text-xl': $route.path == '/about' }"
-                @click="delayChange"
+                @click="delayChange; saying=phrases[1]"
               >About</button>
             </nuxt-link>
           </li>
@@ -75,7 +75,7 @@
               <button
                 class="bg-transparent border-transparent text-lg text-gray-700 font-semibold py-1 px-4 rounded-lg outline-none uppercase transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-101 cursor-pointer"
                 v-bind:class="{ 'border-gray-900 text-gray-900 double-line text-xl': $route.path == '/contact' }"
-                @click="delayChange"
+                @click="delayChange; saying=phrases[2]"
               >Contact</button>
             </nuxt-link>
           </li>
@@ -106,6 +106,12 @@ export default {
     return {
       logo: require('../assets/imgs/logo.png'),
       hidden: true,
+      saying: "The Time is Now",
+      phrases: [
+        "The Time is Now",
+        "It's Time for Action",
+        "Don't wait to Sign up"
+      ]
     }
   },
   methods: {

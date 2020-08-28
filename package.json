@@ -11,8 +11,7 @@
   "dependencies": {
     "firebase": "^7.19.0",
     "nuxt": "^2.14.0",
-    "nuxt-material-design-icons": "^1.0.4",
-    "vue-flux": "^6.2.2"
+    "nuxt-material-design-icons": "^1.0.4"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^2.1.0",

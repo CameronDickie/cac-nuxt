@@ -1,8 +1,8 @@
 <template>
   <div>
     <footer
-      class="shadow-sm fixed bg-gray-100 bg-opacity-100 p-2 text-xs"
-      style="width:100%; z-index:99; bottom:0%; position:absolute;"
+      class="shadow-sm static bg-gray-100 bg-opacity-100 p-2 text-xs bottom-0"
+      style="width:100%; z-index:99;"
     >
       <ul class="flex justify-center">
         <li>
