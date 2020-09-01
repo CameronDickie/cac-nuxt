@@ -1,6 +1,6 @@
 <template>
   <!-- component -->
-  <header class="shadow-sm fixed bg-transparent" style="width:100%; z-index:99">
+  <header v-on:scroll="handleScroll" :class="top ?'shadow-sm fixed bg-transparent':'shadow-sm fixed bg-opacity-100 bg-white'" style="width:100%; z-index:99">
     <!-- <div class="bg-blue-300 py-1"></div> -->
     <nav class="flex items-center justify-between flex-wrap bg-transparent hover:bg-opacity-75 hover:bg-white py-4 mx-auto px-8">
       <div class="flex items-center flex-shrink-0 mr-6">
@@ -108,6 +108,7 @@ export default {
       hidden: true,
       saying: "The Time is Now",
       showSubtitle: true,
+      top: true,
       phrases: [
         "The Time is Now",
         "It's Time for Action",
@@ -115,10 +116,27 @@ export default {
       ]
     }
   },
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
   methods: {
     delayChange: function () {
       // `this` inside methods point to the Vue instance
       setTimeout(() => (this.hidden = true), 200)
+    },
+    handleScroll() {
+      var y = window.scrollY;
+      console.log('scrolling');
+      if(y == 0) {
+        this.top = true;
+        return;
+      } else {
+        this.top = false;
+        return;
+      }
     },
   },
 }

@@ -9,16 +9,16 @@
           :visibleSlide="visibleSlide"
           :direction="direction"
         >
-        <a :href="slide.link">
-          <div
-            class="card flex absolute flex-col justify-center p-4 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-lg shadow-2xl divide-y divide-gray-400"
-            style="top:25%; left:5%;"
-          >
-            <div class="prod-title">
-              <p class="text-2xl uppercase text-black font-bold">{{slide.title}}</p>
-              <p class="uppercase text-sm text-gray-700">{{slide.subtitle}}</p>
+          <a :href="slide.link">
+            <div
+              class="card flex absolute flex-col justify-center p-4 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-lg shadow-2xl divide-y divide-gray-400"
+              style="top:25%; left:5%;"
+            >
+              <div class="prod-title">
+                <p class="text-2xl uppercase text-black font-bold">{{slide.title}}</p>
+                <p class="uppercase text-sm text-gray-700">{{slide.subtitle}}</p>
+              </div>
             </div>
-          </div>
           </a>
           <img :src="slide.src" class="carousel-image" />
         </CarouselSlide>
@@ -42,14 +42,14 @@ export default {
           src: require('../assets/imgs/environmental-racism.jpg'),
           title: 'See our post about Environmental Racism',
           subtitle: 'Read more on instagram',
-          link: "https://www.instagram.com/p/CBjZ-Een8eS/"
+          link: 'https://www.instagram.com/p/CBjZ-Een8eS/',
         },
         {
           src: require('../assets/imgs/greenwashing.png'),
           title: 'See our post about Greenwashing',
           subtitle: 'And how it impacts consumerism',
-          link: "https://www.instagram.com/p/CEMcOVSnUhC/"
-        }
+          link: 'https://www.instagram.com/p/CEMcOVSnUhC/',
+        },
       ],
       visibleSlide: 0,
       direction: '',
