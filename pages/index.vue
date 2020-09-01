@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class style="padding-top:100px">
+    <div class>
       <Carousel @next="next" @prev="prev">
         <CarouselSlide
           v-for="(slide, index) in slides"
@@ -97,7 +97,7 @@ export default {
 }
 .carousel-image {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: scale-down;
 }
 .title {

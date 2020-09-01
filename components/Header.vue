@@ -1,8 +1,8 @@
 <template>
   <!-- component -->
-  <header class="shadow-sm fixed bg-opacity-100" style="width:100%; z-index:99">
+  <header class="shadow-sm fixed bg-transparent" style="width:100%; z-index:99">
     <!-- <div class="bg-blue-300 py-1"></div> -->
-    <nav class="flex items-center justify-between flex-wrap bg-white py-4 mx-auto px-8">
+    <nav class="flex items-center justify-between flex-wrap bg-transparent hover:bg-opacity-75 hover:bg-white py-4 mx-auto px-8">
       <div class="flex items-center flex-shrink-0 mr-6">
         <h3 class="xl:text-3xl lg:text-3xl md:text-3xl sm:text-2xl font-semibold capitalize dark:text-gray-300 hover:text-gray-800">
           <!-- Header -->
@@ -57,7 +57,7 @@
               <button
                 class="bg-transparent border-transparent text-lg text-gray-700 font-semibold py-1 px-4 rounded-lg outline-none uppercase transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-101 cursor-pointer"
                 v-bind:class="{ 'border-gray-900 text-gray-900 double-line text-xl': $route.path == '/' }"
-                @click="delayChange; saying=phrases[0]"
+                @click="delayChange; saying=phrases[0]; hidden=true"
               >Home</button>
             </nuxt-link>
           </li>
@@ -66,7 +66,7 @@
               <button
                 class="bg-transparent border-transparent text-lg text-gray-700 font-semibold py-1 px-4 rounded-lg outline-none uppercase transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-101 cursor-pointer"
                 v-bind:class="{ 'border-gray-900 text-gray-900 double-line text-xl': $route.path == '/about' }"
-                @click="delayChange; saying=phrases[1]"
+                @click="delayChange; saying=phrases[1]; hidden=true"
               >About</button>
             </nuxt-link>
           </li>
@@ -75,7 +75,7 @@
               <button
                 class="bg-transparent border-transparent text-lg text-gray-700 font-semibold py-1 px-4 rounded-lg outline-none uppercase transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-101 cursor-pointer"
                 v-bind:class="{ 'border-gray-900 text-gray-900 double-line text-xl': $route.path == '/contact' }"
-                @click="delayChange; saying=phrases[2]"
+                @click="delayChange; saying=phrases[2]; hidden=true"
               >Contact</button>
             </nuxt-link>
           </li>

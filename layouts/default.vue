@@ -4,9 +4,18 @@
     <main class="flex-1 overflow-y-auto">
       <Nuxt />
     </main>
-    <Footer/>
+    <Footer />
   </div>
 </template>
+<script>
+export default {
+  head() {
+    return {
+      
+    }
+  },
+}
+</script>
 
 <style>
 html {
@@ -20,5 +29,4 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
-
 </style>

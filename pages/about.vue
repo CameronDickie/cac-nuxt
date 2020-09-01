@@ -1,7 +1,7 @@
 <template>
   <div class="mt-20" style="padding:10px;">
     <!-- component -->
-    <div class="w-screen h-screen flex justify-center items-center">
+    <div class="w-screen flex justify-center items-center">
       <div class="container mx-auto w-full p-4 md:w-3/4 sm:w-1/2">
         <div
           class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl divide-y divide-gray-400"
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <div class="w-screen flex pb-32 justify-center items-center">
+    <div class="w-screen flex pb-32 pt-32 justify-center items-center">
       <div class="container mx-auto w-full p-4 md:w-3/4 sm:w-1/2">
         <div
           class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl divide-y divide-gray-400"

@@ -19,7 +19,15 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'climateactioncarleton', name: 'climateactioncarleton', content: process.env.npm_package_description || '' },
+      { hid: 'climate', name: 'climate', content:'climate'},
+      { hid: 'action', name: 'action', content:'action'},
+      { hid: 'carleton', name: 'carleton', content:'carleton'},
+      { hid: 'Climate Action Carleton', name: 'Climate Action Carleton', content:'Climate Action Carleton'},
+      { hid: 'Carleton University', name: 'Carleton University', content:'Carleton University'},
+      { hid: 'Carleton', name: 'Carleton', content:'Carleton'},
+      { hid: 'CarletonU', name: 'CarletonU', content:'CarletonU'},
+      
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
