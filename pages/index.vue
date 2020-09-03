@@ -11,7 +11,7 @@
         >
           <a :href="slide.link">
             <div
-              class="card flex absolute flex-col justify-center p-4 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-lg shadow-2xl divide-y divide-gray-400"
+              class="card flex absolute flex-col justify-center p-4 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-lg divide-y divide-gray-400"
               style="top:25%; left:5%;"
             >
               <div class="prod-title">
@@ -97,7 +97,7 @@ export default {
 .carousel-image {
   width: 100%;
   height: 85vh;
-  object-fit:contain;
+  object-fit:cover;
 }
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
