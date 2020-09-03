@@ -35,7 +35,7 @@
           <div class="h-8 bg-gray-500 w-16 block mx-auto rounded-sm"></div>
           <h1>Dunns Famous</h1>
         </a>-->
-        <div :class="top ? 'bg-white bg-opacity-75 text-lg uppercase text-gray-400 font-bold':'text-lg uppercase text-gray-400 font-bold'" :v-if="showSubtitle">{{saying}}</div>
+        <div :class="top ? 'bg-white bg-opacity-75 p-2 text-lg uppercase text-gray-900 font-bold':'text-lg uppercase text-gray-900 font-bold'" :v-if="showSubtitle">{{saying}}</div>
       </div>
 
       <div class="block lg:hidden pt-1" @click="hidden = !hidden">
