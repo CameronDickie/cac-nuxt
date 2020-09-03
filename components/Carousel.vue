@@ -38,7 +38,7 @@ export default {
 .carousel {
   position: relative;
   width: 100vw;
-  height: 75vh;
+  height: 85vh;
   overflow: hidden;
   align-items: center;
   justify-items: center;
@@ -54,6 +54,7 @@ button {
 }
 .next {
   justify-self: start !important;
+
   right: 0%;
 }
 .previous {

@@ -4,7 +4,7 @@
     <!-- <div class="bg-blue-300 py-1"></div> -->
     <nav class="flex items-center justify-between flex-wrap bg-transparent hover:bg-opacity-75 hover:bg-white py-4 mx-auto px-8">
       <div class="flex items-center flex-shrink-0 mr-6">
-        <h3 class="xl:text-3xl lg:text-3xl md:text-3xl sm:text-2xl font-semibold capitalize dark:text-gray-300 hover:text-gray-800">
+        <h3 class="xl:text-xl lg:text-xl md:text-xl sm:text-xl font-semibold capitalize dark:text-gray-300 hover:text-gray-800">
           <!-- Header -->
           <img style="padding-right:20px; display:inline-block; width:48px;" :src="logo" />
           <span class="">Climate Action Carleton</span>
@@ -27,7 +27,7 @@
           <div class="h-8 bg-gray-500 w-16 block mx-auto rounded-sm"></div>
           <h1>Dunns Famous</h1>
         </a>-->
-        <div class="text-2xl uppercase text-gray-400 font-bold" :v-if="showSubtitle">{{saying}}</div>
+        <div class="text-lg uppercase text-gray-400 font-bold" :v-if="showSubtitle">{{saying}}</div>
       </div>
 
       <div class="block lg:hidden pt-1" @click="hidden = !hidden">

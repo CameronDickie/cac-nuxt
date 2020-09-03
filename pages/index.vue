@@ -26,8 +26,7 @@
     </div>
     <div class="container">
       <div class>
-        <Logo />
-        <h1 class="title">cac</h1>
+        This is where the homepage content will be going
       </div>
     </div>
   </div>
@@ -97,8 +96,8 @@ export default {
 }
 .carousel-image {
   width: 100%;
-  height: auto;
-  object-fit: scale-down;
+  height: 85vh;
+  object-fit:contain;
 }
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
