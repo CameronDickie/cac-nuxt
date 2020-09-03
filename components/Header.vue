@@ -1,13 +1,21 @@
 <template>
   <!-- component -->
-  <header v-on:scroll="handleScroll" :class="top ?'shadow-sm fixed bg-transparent':'shadow-sm fixed bg-opacity-100 bg-white'" style="width:100%; z-index:99">
+  <header
+    v-on:scroll="handleScroll"
+    :class="top ?'shadow-sm fixed bg-transparent':'shadow-sm fixed bg-opacity-100 bg-white'"
+    style="width:100%; z-index:99"
+  >
     <!-- <div class="bg-blue-300 py-1"></div> -->
-    <nav class="flex items-center justify-between flex-wrap bg-transparent hover:bg-opacity-75 hover:bg-white py-4 mx-auto px-8">
+    <nav
+      class="flex items-center justify-between flex-wrap bg-transparent hover:bg-opacity-100 hover:bg-white py-4 mx-auto px-8"
+    >
       <div class="flex items-center flex-shrink-0 mr-6">
-        <h3 class="xl:text-xl lg:text-xl md:text-xl sm:text-xl font-semibold capitalize dark:text-gray-300 hover:text-gray-800">
+        <h3
+          class="xl:text-xl lg:text-xl md:text-xl sm:text-xl font-semibold capitalize dark:text-gray-300 hover:text-gray-800"
+        >
           <!-- Header -->
           <img style="padding-right:20px; display:inline-block; width:48px;" :src="logo" />
-          <span class="">Climate Action Carleton</span>
+          <span :class="top ? 'bg-white bg-opacity-75 p-2':''">Climate Action Carleton</span>
           <button class="ml-2" @click="showSubtitle = !showSubtitle">
             <svg class="h-5 w-5 fill-current" viewBox="0 0 256 512">
               <path
@@ -27,7 +35,7 @@
           <div class="h-8 bg-gray-500 w-16 block mx-auto rounded-sm"></div>
           <h1>Dunns Famous</h1>
         </a>-->
-        <div class="text-lg uppercase text-gray-400 font-bold" :v-if="showSubtitle">{{saying}}</div>
+        <div :class="top ? 'bg-white bg-opacity-75 text-lg uppercase text-gray-400 font-bold':'text-lg uppercase text-gray-400 font-bold'" :v-if="showSubtitle">{{saying}}</div>
       </div>
 
       <div class="block lg:hidden pt-1" @click="hidden = !hidden">
@@ -45,7 +53,9 @@
         id="nav-content"
         v-bind:class="{ hidden: hidden }"
       >
-        <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        <ul
+          :class="top ? 'bg-white bg-opacity-75 p-4 list-reset lg:flex justify-end flex-1 items-center':'list-reset lg:flex justify-end flex-1 items-center'"
+        >
           <li class="mr-3 pb-1 pt-1">
             <!-- <a
               class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
@@ -106,21 +116,21 @@ export default {
     return {
       logo: require('../assets/imgs/logo.png'),
       hidden: true,
-      saying: "The Time is Now",
+      saying: 'The Time is Now',
       showSubtitle: true,
       top: true,
       phrases: [
-        "The Time is Now",
+        'The Time is Now',
         "It's Time for Action",
-        "Don't wait to Sign up"
-      ]
+        "Don't wait to Sign up",
+      ],
     }
   },
   beforeMount() {
     window.addEventListener('scroll', this.handleScroll)
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     delayChange: function () {
@@ -128,14 +138,14 @@ export default {
       setTimeout(() => (this.hidden = true), 200)
     },
     handleScroll() {
-      var y = window.scrollY;
-      console.log('scrolling');
-      if(y == 0) {
-        this.top = true;
-        return;
+      var y = window.scrollY
+      console.log('scrolling')
+      if (y == 0) {
+        this.top = true
+        return
       } else {
-        this.top = false;
-        return;
+        this.top = false
+        return
       }
     },
   },

@@ -15,7 +15,7 @@
               style="top:25%; left:5%;"
             >
               <div class="prod-title">
-                <p class="text-2xl uppercase text-black font-bold">{{slide.title}}</p>
+                <p class="xl:text-2xl lg:text-2xl md:text-xl sm:text-lg xs:text-md uppercase text-black font-bold">{{slide.title}}</p>
                 <p class="uppercase text-sm text-gray-700">{{slide.subtitle}}</p>
               </div>
             </div>
