@@ -14,6 +14,7 @@ module.exports = {
               '128': '32rem',
           },
       }
+      
   },
   variants: {
       opacity: ['responsive', 'hover']

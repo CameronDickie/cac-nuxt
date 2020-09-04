@@ -2,7 +2,7 @@
   <!-- component -->
   <header
     v-on:scroll="handleScroll"
-    :class="top ?'shadow-sm fixed bg-transparent':'shadow-sm fixed bg-opacity-100 bg-white'"
+    class='shadow-sm fixed bg-opacity-100 bg-white'
     style="width:100%; z-index:99"
   >
     <!-- <div class="bg-blue-300 py-1"></div> -->
@@ -15,7 +15,7 @@
         >
           <!-- Header -->
           <img style="padding-right:20px; display:inline-block; width:48px;" :src="logo" />
-          <span :class="top ? 'bg-white bg-opacity-75 p-2':''">Climate Action Carleton</span>
+          <span>Climate Action Carleton</span>
           <button class="ml-2" @click="showSubtitle = !showSubtitle">
             <svg class="h-5 w-5 fill-current" viewBox="0 0 256 512">
               <path
@@ -35,7 +35,7 @@
           <div class="h-8 bg-gray-500 w-16 block mx-auto rounded-sm"></div>
           <h1>Dunns Famous</h1>
         </a>-->
-        <div :class="top ? 'bg-white bg-opacity-75 p-2 text-lg uppercase text-gray-900 font-bold':'text-lg uppercase text-gray-900 font-bold'" :v-if="showSubtitle">{{saying}}</div>
+        <div class="text-lg uppercase text-gray-400 font-bold" :v-if="showSubtitle">{{saying}}</div>
       </div>
 
       <div class="block lg:hidden pt-1" @click="hidden = !hidden">
@@ -54,7 +54,7 @@
         v-bind:class="{ hidden: hidden }"
       >
         <ul
-          :class="top ? 'bg-white bg-opacity-75 p-4 list-reset lg:flex justify-end flex-1 items-center':'list-reset lg:flex justify-end flex-1 items-center'"
+          class="list-reset lg:flex justify-end flex-1 items-center"
         >
           <li class="mr-3 pb-1 pt-1">
             <!-- <a
@@ -81,6 +81,15 @@
             </nuxt-link>
           </li>
           <li class="mr-3 pb-1 pt-1">
+            <nuxt-link to="/divestment">
+              <button
+                class="bg-transparent border-transparent text-lg text-gray-700 font-semibold py-1 px-4 rounded-lg outline-none uppercase transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-101 cursor-pointer"
+                v-bind:class="{ 'border-gray-900 text-gray-900 double-line text-xl': $route.path == '/divestment' }"
+                @click="delayChange; hidden=true; saying=phrases[3];"
+              >Divestment</button>
+            </nuxt-link>
+          </li>
+          <li class="mr-3 pb-1 pt-1">
             <nuxt-link to="/contact">
               <button
                 class="bg-transparent border-transparent text-lg text-gray-700 font-semibold py-1 px-4 rounded-lg outline-none uppercase transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-101 cursor-pointer"
@@ -89,15 +98,6 @@
               >Contact</button>
             </nuxt-link>
           </li>
-          <!-- <li class="mr-3 pb-1 pt-1">
-            <nuxt-link to="/services">
-              <button
-                class="bg-transparent text-grey-800 font-semibold py-2 px-4 border border-grey rounded-full outline-none"
-                v-bind:class="{ 'bg-gray-900 text-white': $route.path == '/services' }"
-                @click="delayChange"
-              >Services</button>
-            </nuxt-link>
-          </li>-->
         </ul>
       </div>
     </nav>
@@ -123,6 +123,7 @@ export default {
         'The Time is Now',
         "It's Time for Action",
         "Don't wait to Sign up",
+        "The Time to Divest is Now"
       ],
     }
   },

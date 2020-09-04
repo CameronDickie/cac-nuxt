@@ -1,17 +1,15 @@
 <template>
-  <div class="mt-20" style="padding:10px;">
+  <div class="mt-20 divide-y divide-gray-400" style="padding:10px;">
     <!-- component -->
     <div class="flex justify-center p-4">
-      <div
-        class="card flex flex-col md:w-1/2 justify-center p-2 bg-white rounded-lg shadow-lg divide-y divide-gray-400 text-center"
-      >
+      <div class="card flex flex-col md:w-1/2 justify-center p-2 bg-white rounded-lg text-center">
         <div class="prod-title">
           <p class="text-2xl uppercase text-gray-900 font-bold">Send us an Email</p>
         </div>
       </div>
     </div>
 
-    <form class="w-full max-w-lg mx-auto">
+    <form class="w-full max-w-lg p-4 mx-auto">
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label
@@ -63,9 +61,7 @@
             class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
             id="message"
           ></textarea>
-          <p
-            class="text-gray-600 text-xs italic"
-          >Please enter a body for your email</p>
+          <p class="text-gray-600 text-xs italic">Please enter a body for your email</p>
         </div>
       </div>
       <div class="md:flex md:items-center">
@@ -79,17 +75,16 @@
         <div class="md:w-2/3"></div>
       </div>
     </form>
-    <div class="flex h-auto pb-16"></div>
     <div class="flex justify-center p-4">
       <div
-        class="card flex flex-col md:w-1/2 justify-center p-2 bg-white rounded-lg shadow-lg divide-y divide-gray-400 text-center"
+        class="card flex flex-col md:w-1/2 justify-center p-2 bg-white rounded-lg  text-center"
       >
         <div class="prod-title">
           <p class="text-2xl uppercase text-gray-900 font-bold">Join our Team!</p>
         </div>
       </div>
     </div>
-    <div class="flex justify-center text-center">
+    <div class="flex justify-center text-center p-4">
       <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLSdpdpIjhpTaV0m5GBcYAOgKcrpi7VWseBG8LbzggkuykZ0gIw/viewform?embedded=true"
         width="640px"
@@ -102,21 +97,28 @@
 <script>
 export default {
   data() {
-    return {
-
-    }
+    return {}
   },
   methods: {
-    sendEmail(){
-      var first = document.getElementById('grid-first-name').value;
-      var last = document.getElementById('grid-last-name').value;
+    sendEmail() {
+      var first = document.getElementById('grid-first-name').value
+      var last = document.getElementById('grid-last-name').value
       var subjt = ''
-      subjt = document.getElementById("subject").value;
-      var bdy = '';
-      bdy =  document.getElementById("message").value;
+      subjt = document.getElementById('subject').value
+      var bdy = ''
+      bdy = document.getElementById('message').value
       bdy = bdy.replaceAll('\n', '%0D%0A')
-      window.open('mailto:climateactioncarleton@gmail.com?subject=' + subjt + "&body=" + bdy + '%0D%0A' + first + " " + last);
+      window.open(
+        'mailto:climateactioncarleton@gmail.com?subject=' +
+          subjt +
+          '&body=' +
+          bdy +
+          '%0D%0A' +
+          first +
+          ' ' +
+          last
+      )
     },
-  }
+  },
 }
 </script>
