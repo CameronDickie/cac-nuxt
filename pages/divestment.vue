@@ -3,34 +3,60 @@
     <div class="p-4 w-128 fixed right-0">
       <!--light mode - wide side navigation-->
       <div
-        class="w-full py-4 px-2 text-gray-900 bg-white rounded-lg text-left capitalize font-medium shadow-lg"
+        :class="table ?'hidden' : 'w-full py-4 px-2 text-gray-900 bg-white rounded-lg text-left capitalize divide-y divide-gray-400 font-medium shadow-lg'"
       >
-        <span
-          class="cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5"
-        >
-          <i class="w-8 fas fa-stream p-2 bg-gray-200 rounded-full"></i>
-          <span class="mx-2">Introduction</span>
-        </span>
-        <span
-          class="cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5"
-        >
-          <i class="w-8 fas fa-search p-2 bg-gray-200 rounded-full"></i>
-          <span class="mx-2">What is Divestment?</span>
-        </span>
-        <span
-          class="cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5"
-        >
-          <span class="w-8 mb-5 relative">
-            <i class="w-8 fas fa-user p-2 bg-gray-200 rounded-full"></i>
+        <button @click="table=!table">
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        :class="table ? 'w-full py-4 px-2 text-gray-900 bg-white rounded-lg text-left capitalize divide-y divide-gray-400 font-medium shadow-lg' : 'w-full hidden py-4 px-2 text-gray-900 bg-white rounded-lg text-left capitalize divide-y divide-gray-400 font-medium shadow-lg'"
+      >
+        <button class="bg-white" @click="table = !table">
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+            />
+          </svg>
+        </button>
+        <div class="pt-4">
+            <span
+              class="cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5"
+              @click="scrollTo('intro')"
+            >
+              <i class="w-8 fas fa-stream p-2 bg-gray-200 rounded-full"></i>
+              <span class="mx-2">Introduction</span>
+            </span>
+          <span
+            class="cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5"
+            @click="scrollTo('whatis')"
+          >
+            <i class="w-8 fas fa-search p-2 bg-gray-200 rounded-full"></i>
+            <span class="mx-2">What is Divestment?</span>
           </span>
-          <span class="mx-2">Video</span>
-        </span>
-        <span
-          class="cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5"
-        >
-          <i class="w-8 fas fa-th p-2 bg-gray-200 rounded-full"></i>
-          <span class="mx-2">Why should we Divest?</span>
-        </span>
+          <span
+            class="cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5"
+            @click="scrollTo('video')"
+          >
+            <span class="w-8 mb-5 relative">
+              <i class="w-8 fas fa-user p-2 bg-gray-200 rounded-full"></i>
+            </span>
+            <span class="mx-2">Video</span>
+          </span>
+          <span
+            class="cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5"
+            @click="scrollTo('why')"
+          >
+            <i class="w-8 fas fa-th p-2 bg-gray-200 rounded-full"></i>
+            <span class="mx-2">Why should we Divest?</span>
+          </span>
+        </div>
       </div>
     </div>
     <div class="w-auto h-auto justify-center">
@@ -49,7 +75,7 @@
       <img :src="splash" class="w-full" style="object-fit:cover; height:85vh" />
     </div>
     <div class="justify-center items-center mt-20">
-      <div class="mx-auto flex flex-col justify-center text-center p-10 divide-y">
+      <div id="intro" class="mx-auto flex flex-col justify-center text-center p-10 divide-y">
         <div class="p-4">
           <p class="text-4xl uppercase text-gray-900 font-bold">Let's Talk Divestment</p>
         </div>
@@ -66,14 +92,14 @@
           </p>
         </div>
         <div class="p-4">
-          <p class="text-4xl uppercase text-gray-900 font-bold">What is Divestment?</p>
+          <p id="whatis" class="text-4xl uppercase text-gray-900 font-bold">What is Divestment?</p>
         </div>
         <div>
           <p
             class="font-medium p-4"
           >Put simply, divestment is the opposite of investment. A person or organization divests from businesses when they sell their stocks, bonds, or other financial holdings, essentially withdrawing their financial support from the organization. A catalyst for divestment can be the devaluation of an asset that makes holding onto it financially unfeasible, or the unethical implications of supporting a company or industry that causes social injury.</p>
         </div>
-        <div class="p-4">
+        <div id="video" class="p-4">
           <div>
             <p class="text-4xl uppercase text-gray-900 font-bold">
               An informative video by
@@ -94,7 +120,7 @@
             ></iframe>
           </div>
         </div>
-        <div class="p-4">
+        <div id="why" class="p-4">
           <p class="text-4xl uppercase text-gray-900 font-bold">Why Should we Divest?</p>
         </div>
         <div>
@@ -113,8 +139,23 @@ export default {
   data() {
     return {
       splash: require('../assets/imgs/img-28.JPG'),
+      table: true,
     }
   },
+  methods: {
+      scrollTo(id) {
+          if (id == null || id == '') {
+              console.log("id is null");
+              return;
+          }
+          let ele = document.getElementById(id);
+          if(ele == null || ele == '') {
+              console.log("element was not found");
+              return;
+          }
+          ele.scrollIntoView();
+      }
+  }
 }
 </script>
 
