@@ -25,29 +25,21 @@
             />
           </svg>
         </button>
+
         <div class="pt-4">
-            <span
-              class="cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5"
-              @click="scrollTo('intro')"
-            >
-              <i class="w-8 fas fa-stream p-2 bg-gray-200 rounded-full"></i>
-              <span class="mx-2">Introduction</span>
-            </span>
+          <span
+            class="cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5"
+            @click="scrollTo('intro')"
+          >
+            <i class="w-8 fas fa-stream p-2 bg-gray-200 rounded-full"></i>
+            <span class="mx-2">Introduction</span>
+          </span>
           <span
             class="cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5"
             @click="scrollTo('whatis')"
           >
             <i class="w-8 fas fa-search p-2 bg-gray-200 rounded-full"></i>
             <span class="mx-2">What is Divestment?</span>
-          </span>
-          <span
-            class="cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5"
-            @click="scrollTo('video')"
-          >
-            <span class="w-8 mb-5 relative">
-              <i class="w-8 fas fa-user p-2 bg-gray-200 rounded-full"></i>
-            </span>
-            <span class="mx-2">Video</span>
           </span>
           <span
             class="cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5"
@@ -59,6 +51,7 @@
         </div>
       </div>
     </div>
+
     <div class="w-auto h-auto justify-center">
       <div
         class="card flex absolute flex-col justify-center p-4 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-lg divide-y divide-gray-400 xs:mx-32 md:mx-64 my-64"
@@ -74,12 +67,15 @@
       </div>
       <img :src="splash" class="w-full" style="object-fit:cover; height:85vh" />
     </div>
-    <div class="justify-center items-center mt-20">
-      <div id="intro" class="mx-auto flex flex-col justify-center text-center p-10 divide-y">
-        <div class="p-4">
-          <p class="text-4xl uppercase text-gray-900 font-bold">Let's Talk Divestment</p>
-        </div>
-        <div class>
+    <div id="intro" class="w-screen flex justify-center items-center">
+      <div class="container mx-auto w-full p-4 md:w-3/4 sm:w-1/2">
+        <div
+          class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl divide-y divide-gray-400"
+        >
+          <div class="prod-title">
+            <p class="text-2xl uppercase text-gray-900 font-bold">Let's Talk Divestment</p>
+            <!-- <p class="uppercase text-sm text-gray-400">a brief description</p> -->
+          </div>
           <p
             class="font-medium p-4"
           >For decades, the fossil fuel industry has knowingly polluted our atmosphere and jeopardized our future with impunity. This has always been catastrophic for our ecosystems, but now we have reached a tipping point. As of 2019, the global fossil fuel industry has 2,798 gigatons of coal, oil, and gas currently in its reserves, ready to be burned into our atmosphere. However, this number is five times higher than scientists’ carbon budget for remaining below the goal of 2-degrees-celsius rise in global average temperature.</p>
@@ -91,39 +87,56 @@
             >Climate Justice Climatique UOttawa (CJCUO)</a> are calling on Carleton University and the University of Ottawa to hold the fossil fuel industry accountable for its actions by divesting our university endowment funds from the fossil fuel industry by 2025. This includes divesting from coal, oil, and natural gas companies that emit harmful greenhouse gases into the atmosphere through their business practices. We are calling for divestment in order to send a simple, powerful message: profiting from the destruction of our planet is ecologically disastrous, financially unfeasible, and morally unacceptable.
           </p>
         </div>
-        <div class="p-4">
-          <p id="whatis" class="text-4xl uppercase text-gray-900 font-bold">What is Divestment?</p>
-        </div>
-        <div>
+      </div>
+    </div>
+    <div id="whatis" class="w-screen flex justify-center items-center">
+      <div class="container mx-auto w-full p-4 md:w-3/4 sm:w-1/2">
+        <div
+          class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl divide-y divide-gray-400"
+        >
+          <div class="prod-title">
+            <p class="text-2xl uppercase text-gray-900 font-bold">What is Divestment?</p>
+            <!-- <p class="uppercase text-sm text-gray-400">a brief description</p> -->
+          </div>
           <p
             class="font-medium p-4"
           >Put simply, divestment is the opposite of investment. A person or organization divests from businesses when they sell their stocks, bonds, or other financial holdings, essentially withdrawing their financial support from the organization. A catalyst for divestment can be the devaluation of an asset that makes holding onto it financially unfeasible, or the unethical implications of supporting a company or industry that causes social injury.</p>
-        </div>
-        <div id="video" class="p-4">
           <div>
-            <p class="text-4xl uppercase text-gray-900 font-bold">
-              An informative video by
-              <a
-                class="underline"
-                href="https://gofossilfree.org/"
-              >GoFossileFree.org</a>
-            </p>
-          </div>
-          <div class="flex justify-center text-center p-4">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/_dApzI9jN04"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+            <div>
+              <p class="text-4xl uppercase text-gray-900 font-bold">
+                An informative video by
+                <a
+                  class="underline text-center"
+                  href="https://gofossilfree.org/"
+                >GoFossileFree.org</a>
+              </p>
+            </div>
+            <div class="flex justify-center text-center p-4">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/_dApzI9jN04"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </div>
-        <div id="why" class="p-4">
-          <p class="text-4xl uppercase text-gray-900 font-bold">Why Should we Divest?</p>
-        </div>
-        <div>
+      </div>
+    </div>
+    <div id="intro" class="w-screen flex justify-center items-center">
+      <div class="container mx-auto w-full p-4 md:w-3/4 sm:w-1/2">
+        <div
+          class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl divide-y divide-gray-400"
+        >
+          <div class="prod-title">
+            <p class="text-2xl uppercase text-gray-900 font-bold">Why Should we Divest?</p>
+            <!-- <p class="uppercase text-sm text-gray-400">a brief description</p> -->
+          </div>
+          <p
+            class="font-medium p-4"
+          >For decades, the fossil fuel industry has knowingly polluted our atmosphere and jeopardized our future with impunity. This has always been catastrophic for our ecosystems, but now we have reached a tipping point. As of 2019, the global fossil fuel industry has 2,798 gigatons of coal, oil, and gas currently in its reserves, ready to be burned into our atmosphere. However, this number is five times higher than scientists’ carbon budget for remaining below the goal of 2-degrees-celsius rise in global average temperature.</p>
           <p class="font-medium p-4">
             Universities are a key layer in the fabric of civil society. Their reputation for knowledge, wisdom, and innovation have established them as institutions of high intellectual authority. For generations, university and college campuses have been drivers of social change, demanding racial, social, and now environmental, justice.
             By divesting from the fossil fuel industry, Carleton University and the University of Ottawa have an important opportunity to take a powerful stand against this industry and its catastrophic impacts.
@@ -142,20 +155,29 @@ export default {
       table: true,
     }
   },
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
   methods: {
-      scrollTo(id) {
-          if (id == null || id == '') {
-              console.log("id is null");
-              return;
-          }
-          let ele = document.getElementById(id);
-          if(ele == null || ele == '') {
-              console.log("element was not found");
-              return;
-          }
-          ele.scrollIntoView();
+    scrollTo(id) {
+      if (id == null || id == '') {
+        console.log('id is null')
+        return
       }
-  }
+      let ele = document.getElementById(id)
+      if (ele == null || ele == '') {
+        console.log('element was not found')
+        return
+      }
+      ele.scrollIntoView()
+    },
+    handleScroll() {
+      var y = window.scrollY
+    },
+  },
 }
 </script>
 

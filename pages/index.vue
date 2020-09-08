@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class>
+    <div class='pt-10'>
       <Carousel @next="next" @prev="prev">
         <CarouselSlide
           v-for="(slide, index) in slides"
@@ -97,7 +97,7 @@ export default {
 .carousel-image {
   width: 100%;
   height: 85vh;
-  object-fit:cover;
+  object-fit:contain;
 }
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,

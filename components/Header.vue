@@ -2,7 +2,7 @@
   <!-- component -->
   <header
     v-on:scroll="handleScroll"
-    class='shadow-sm fixed bg-opacity-100 bg-white'
+    class="shadow-sm fixed bg-opacity-100 bg-white"
     style="width:100%; z-index:99"
   >
     <!-- <div class="bg-blue-300 py-1"></div> -->
@@ -10,24 +10,28 @@
       class="flex items-center justify-between flex-wrap bg-transparent hover:bg-opacity-100 hover:bg-white py-4 mx-auto px-8"
     >
       <div class="flex items-center flex-shrink-0 mr-6">
-        <h3
-          class="xl:text-xl lg:text-xl md:text-xl sm:text-xl font-semibold capitalize dark:text-gray-300 hover:text-gray-800"
-        >
-          <!-- Header -->
-          <img style="padding-right:20px; display:inline-block; width:48px;" :src="logo" />
-          <span>Climate Action Carleton</span>
-          <button class="ml-2" @click="showSubtitle = !showSubtitle">
-            <svg class="h-5 w-5 fill-current" viewBox="0 0 256 512">
-              <path
-                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9
+        <nuxt-link to="/" class="border-none">
+          <button>
+            <h3
+              class="xl:text-xl lg:text-xl md:text-xl sm:text-xl font-semibold capitalize dark:text-gray-300 hover:text-gray-800"
+            >
+              <!-- Header -->
+              <img style="padding-right:20px; display:inline-block; width:48px;" :src="logo" />
+              <span>Climate Action Carleton</span>
+              <button class="md:ml-2 invisible md:visible" @click="showSubtitle = !showSubtitle">
+                <svg class="h-5 w-5 fill-current" viewBox="0 0 256 512">
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9
 								0l-22.6-22.6c-9.4-9.4-9.4-24.6
 								0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6
 								0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136
 								136c9.5 9.4 9.5 24.6.1 34z"
-              />
-            </svg>
+                  />
+                </svg>
+              </button>
+            </h3>
           </button>
-        </h3>
+        </nuxt-link>
       </div>
 
       <div class="flex items-center flex-shrink-0 text-black mr-6 hidden md:block">
@@ -53,9 +57,7 @@
         id="nav-content"
         v-bind:class="{ hidden: hidden }"
       >
-        <ul
-          class="list-reset lg:flex justify-end flex-1 items-center"
-        >
+        <ul class="list-reset lg:flex justify-end flex-1 items-center">
           <li class="mr-3 pb-1 pt-1">
             <!-- <a
               class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
@@ -123,7 +125,7 @@ export default {
         'The Time is Now',
         "It's Time for Action",
         "Don't wait to Sign up",
-        "The Time to Divest is Now"
+        'The Time to Divest is Now',
       ],
     }
   },
