@@ -1,0 +1,29 @@
+@import url('https://fonts.google.com/specimen/Pathway+Gothic+One?category=Serif,Sans+Serif,Monospace')
+
+* {
+   box-sizing: border-box;
+   font-family: 'Pathway Gothic One';
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e2dccd;
+    transition: 0.5s;
+    padding: 20px;
+}
+
+.content {
+    position: relative;
+    max-width: 300px;
+}
+
+a {
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: #333;
+}
