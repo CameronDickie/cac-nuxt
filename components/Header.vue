@@ -142,7 +142,6 @@ export default {
     },
     handleScroll() {
       var y = window.scrollY
-      console.log('scrolling')
       if (y == 0) {
         this.top = true
         return

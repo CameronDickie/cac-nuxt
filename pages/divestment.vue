@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-20">
+  <div class="pt-20" v-on:scroll="handleScroll">
     <div class="p-4 w-128 fixed right-0">
       <!--light mode - wide side navigation-->
       <div
@@ -31,21 +31,21 @@
             class="cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5"
             @click="scrollTo('intro')"
           >
-            <i class="w-8 fas fa-stream p-2 bg-gray-200 rounded-full"></i>
+            <i :class="contents[0].highlighted ? 'w-8 fas fa-search p-2 bg-gray-900 rounded-full':'w-8 fas fa-search p-2 bg-gray-200 rounded-full'"></i>
             <span class="mx-2">Introduction</span>
           </span>
           <span
             class="cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5"
             @click="scrollTo('whatis')"
           >
-            <i class="w-8 fas fa-search p-2 bg-gray-200 rounded-full"></i>
+            <i :class="contents[1].highlighted ? 'w-8 fas fa-search p-2 bg-gray-900 rounded-full':'w-8 fas fa-search p-2 bg-gray-200 rounded-full'"></i>
             <span class="mx-2">What is Divestment?</span>
           </span>
           <span
             class="cursor-pointer px-2 py-1 hover:bg-gray-200 hover:text-gray-700 rounded block mb-5"
             @click="scrollTo('why')"
           >
-            <i class="w-8 fas fa-th p-2 bg-gray-200 rounded-full"></i>
+            <i :class="contents[2].highlighted ? 'w-8 fas fa-search p-2 bg-gray-900 rounded-full':'w-8 fas fa-search p-2 bg-gray-200 rounded-full'"></i>
             <span class="mx-2">Why should we Divest?</span>
           </span>
         </div>
@@ -54,7 +54,7 @@
 
     <div class="w-auto h-auto justify-center">
       <div
-        class="card flex absolute flex-col justify-center p-4 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-lg divide-y divide-gray-400 xs:mx-32 md:mx-64 my-64"
+        class="card flex absolute flex-col justify-center p-4 bg-white bg-opacity-50 hover:bg-opacity-75 hover:bg-blue-600 rounded-lg divide-y divide-gray-400 xs:mx-32 md:mx-64 my-64"
       >
         <div class="prod-title text-center">
           <p
@@ -125,7 +125,7 @@
         </div>
       </div>
     </div>
-    <div id="intro" class="w-screen flex justify-center items-center">
+    <div id="why" class="w-screen flex justify-center items-center">
       <div class="container mx-auto w-full p-4 md:w-3/4 sm:w-1/2">
         <div
           class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl divide-y divide-gray-400"
@@ -144,6 +144,8 @@
         </div>
       </div>
     </div>
+    <div class="d-block h-64"></div>
+    <div class="d-block h-64"></div>
   </div>
 </template>
 
@@ -153,6 +155,11 @@ export default {
     return {
       splash: require('../assets/imgs/img-28.JPG'),
       table: true,
+      contents: [
+        { id: 'intro', highlighted: false },
+        { id: 'whatis', highlighted: false },
+        { id: 'why', highlighted: false },
+      ],
     }
   },
   beforeMount() {
@@ -160,6 +167,11 @@ export default {
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll)
+  },
+  computed: {
+    TOCLen() {
+      return this.contents.length
+    },
   },
   methods: {
     scrollTo(id) {
@@ -174,8 +186,35 @@ export default {
       }
       ele.scrollIntoView()
     },
+    setHighlight(index) {
+      //manually unhighlight everything else because im too lazy to find a more efficient solution to this FUCK PERFORMANCE
+      for (let j = 0; j < this.TOCLen; j++) {
+        this.contents[j].highlighted = false
+      }
+      //highlight this element tho
+      this.contents[index].highlighted = true
+      return
+    },
     handleScroll() {
-      var y = window.scrollY
+      var isAtTop = (id) => {
+        var ele = document.getElementById(id)
+        var rect = ele.getBoundingClientRect()
+        if (rect.top <= 50) {
+          return true
+        } else {
+          return false
+        }
+      }
+
+      for (let i = this.TOCLen - 1; i >= 0; i--) {
+        if (isAtTop(this.contents[i].id)) {
+          if (this.contents[i].highlighted) {
+            return
+          }
+          this.setHighlight(i)
+          return
+        }
+      }
     },
   },
 }
