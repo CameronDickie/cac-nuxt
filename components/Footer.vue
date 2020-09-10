@@ -52,15 +52,44 @@
     <div
       class="text-center p-1"
     >Climate Action Carleton acknowledges that our work takes places on unceded and unsurrendered Algonquin-Anishinibakeg territory</div>
-    <div class="text-center justify-center p-1">
-      <button class="bg-white-100">
-        {{ new Date().getFullYear() }} -
-        <a class="underline" href="https://cmxx.ca">CMXX</a>
-      </button>
-    </div>
+    <div class="text-center justify-center p-1" id="app">
+    <button
+      type="button"
+      class="btn"
+      @click="showModal"
+    >
+      Website Made By
+    </button>
+
+    <modal
+      v-show="isModalVisible"
+      @close="closeModal"
+    />
+  </div>
   </footer>
 </template>
 <script>
+import modal from './components/modal.vue';
+
+  export default {
+    name: 'app',
+    components: {
+      modal,
+    },
+    data () {
+      return {
+        isModalVisible: false,
+      };
+    },
+    methods: {
+      showModal() {
+        this.isModalVisible = true;
+      },
+      closeModal() {
+        this.isModalVisible = false;
+      }
+    },
+  };
 var colors = {
   'smoke-darkest': 'rgba(0, 0, 0, 0.9)',
   'smoke-darker': 'rgba(0, 0, 0, 0.75)',
