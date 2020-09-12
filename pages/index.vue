@@ -11,7 +11,7 @@
         >
           <a :href="slide.link">
             <div
-              class="card flex absolute flex-col justify-center p-4 bg-white bg-opacity-50 hover:bg-opacity-75 hover:bg-blue-600 rounded-lg divide-y divide-gray-400"
+              class="card flex absolute flex-col justify-center p-4 bg-white bg-opacity-50 hover:bg-opacity-75 hover:bg-blue-600rounded-lg divide-y divide-gray-400"
               style="top:25%; left:5%;"
             >
               <div class="prod-title">

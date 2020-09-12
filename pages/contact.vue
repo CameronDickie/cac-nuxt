@@ -11,18 +11,34 @@
 
     <form class="w-full max-w-lg p-4 mx-auto">
       <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="grid-password"
+          >Email</label>
+          <input
+            :class="emailError ? 'appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500' : 'appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'"
+            id="email"
+            type="email"
+            placeholder="youremail@host.com"
+          />
+          <p
+            class="text-red-500 text-xs italic"
+          >We need you to fill out this field, so we can get back to you!</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label
             class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
             for="grid-first-name"
           >First Name</label>
           <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="grid-first-name"
             type="text"
             placeholder="Jane"
           />
-          <p class="text-red-500 text-xs italic">Please fill out this field.</p>
         </div>
         <div class="w-full md:w-1/2 px-3">
           <label
@@ -36,6 +52,9 @@
             placeholder="Doe"
           />
         </div>
+        <p
+          class="text-black text-xs italic mx-3"
+        >This field is optional, but makes things a little less awkward.</p>
       </div>
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full px-3">
@@ -48,7 +67,9 @@
             id="subject"
             type="subject"
           />
-          <!-- <p class="text-gray-600 text-xs italic">Some tips - as long as needed</p> -->
+          <p
+            class="text-red-500 text-xs italic"
+          >Give us a subject so your email does not go to spam!</p>
         </div>
       </div>
       <div class="flex flex-wrap -mx-3 mb-6">
@@ -76,9 +97,7 @@
       </div>
     </form>
     <div class="flex justify-center p-4">
-      <div
-        class="card flex flex-col md:w-1/2 justify-center p-2 bg-white rounded-lg  text-center"
-      >
+      <div class="card flex flex-col md:w-1/2 justify-center p-2 bg-white rounded-lg text-center">
         <div class="prod-title">
           <p class="text-2xl uppercase text-gray-900 font-bold">Join our Team!</p>
         </div>
@@ -97,27 +116,26 @@
 <script>
 export default {
   data() {
-    return {}
+    return {
+      emailError: false,
+    }
   },
   methods: {
-    sendEmail() {
-      var first = document.getElementById('grid-first-name').value
-      var last = document.getElementById('grid-last-name').value
+    async sendEmail() {
+      //get the contents of their email. If it is empty, show error message and return
+      var email = document.getElementById('email').value
+      if (email == '' || email == null) {
+        this.emailError = true
+        return
+      }
       var subjt = ''
       subjt = document.getElementById('subject').value
       var bdy = ''
       bdy = document.getElementById('message').value
-      bdy = bdy.replaceAll('\n', '%0D%0A')
-      window.open(
-        'mailto:climateactioncarleton@gmail.com?subject=' +
-          subjt +
-          '&body=' +
-          bdy +
-          '%0D%0A' +
-          first +
-          ' ' +
-          last
-      )
+      var info = { email: email, subject: subjt, body: bdy }
+      this.$axios.post('/api/send', info).then((res) => {
+        this.emailError = false
+      })
     },
   },
 }

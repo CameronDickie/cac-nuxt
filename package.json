@@ -9,6 +9,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.12.2",
+    "axios": "^0.20.0",
     "firebase": "^7.19.0",
     "nuxt": "^2.14.0",
     "nuxt-material-design-icons": "^1.0.4"

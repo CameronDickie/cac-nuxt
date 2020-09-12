@@ -62,8 +62,12 @@ module.exports = {
   */
   modules: [
     'nuxt-material-design-icons',
-
+    '@nuxtjs/axios'
   ],
+  axios: {
+    proxy: true,
+    baseUrl: "https://cac-nuxt.web.app"
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
