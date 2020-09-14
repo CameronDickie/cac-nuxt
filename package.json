@@ -1,6 +1,6 @@
 {
   "name": "cac",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -11,7 +11,10 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.12.2",
     "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "firebase": "^7.19.0",
+    "googleapis": "^59.0.0",
     "nuxt": "^2.14.0",
     "nuxt-material-design-icons": "^1.0.4"
   },

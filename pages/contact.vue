@@ -95,6 +95,9 @@
         </div>
         <div class="md:w-2/3"></div>
       </div>
+      <div :class="success ? 'flex flex-wrap mx-3 mb-6 mt-3':'hidden'">
+        <p class="text-gray-600 text-xs italic">Email sent successfully!</p>
+      </div>
     </form>
     <div class="flex justify-center p-4">
       <div class="card flex flex-col md:w-1/2 justify-center p-2 bg-white rounded-lg text-center">
@@ -118,6 +121,7 @@ export default {
   data() {
     return {
       emailError: false,
+      success: false
     }
   },
   methods: {
@@ -128,13 +132,16 @@ export default {
         this.emailError = true
         return
       }
+      var fname = document.getElementById('grid-first-name').value;
+      var lname = document.getElementById('grid-last-name').value;
       var subjt = ''
       subjt = document.getElementById('subject').value
       var bdy = ''
       bdy = document.getElementById('message').value
-      var info = { email: email, subject: subjt, body: bdy }
+      var info = { email: email, subject: subjt, body: bdy, fname:fname, lname:lname }
       this.$axios.post('/api/send', info).then((res) => {
         this.emailError = false
+        this.success = true
       })
     },
   },
